@@ -109,52 +109,52 @@
 //
 //    // Skip 설정
 //    // 특정 예외 발생 시 해당 아이템을 건너뛰고 계속 진행
-//    @Bean
-//    @JobScope
-//    public Step step() throws Exception {
-//        return new StepBuilder("step", jobRepository)
-//                .<Member, Member>chunk(10, transactionManager)
-//                .reader(reader(null))
-//                .processor(processor(null))
-//                .writer(writer(null))
-//                .faultTolerant()
-//                .skipLimit(1)  // skip 허용 횟수
-//                .skip(NullPointerException.class)  // NullPointerException은 스킵
-//                .noSkip(SQLException.class)  // SQLException은 스킵하지 않음
-//                //.skipPolicy(new CustomSkipPolicy())  // 커스텀 스킵 정책 설정
-//                .build();
-//    }
+////    @Bean
+////    @JobScope
+////    public Step step() throws Exception {
+////        return new StepBuilder("step", jobRepository)
+////                .<Member, Member>chunk(10, transactionManager)
+////                .reader(reader(null))
+////                .processor(processor(null))
+////                .writer(writer(null))
+////                .faultTolerant()
+////                .skipLimit(1)  // skip 허용 횟수
+////                .skip(NullPointerException.class)  // NullPointerException은 스킵
+////                .noSkip(SQLException.class)  // SQLException은 스킵하지 않음
+////                //.skipPolicy(new CustomSkipPolicy())  // 커스텀 스킵 정책 설정
+////                .build();
+////    }
 //
 //    // Retry 설정
 //    // 특정 예외 발생 시 재시도
-//    @Bean
-//    @JobScope
-//    public Step step() throws Exception {
-//        return new StepBuilder("step", jobRepository)
-//                .<Member, Member>chunk(10, transactionManager)
-//                .reader(reader(null))
-//                .processor(processor(null))
-//                .writer(writer(null))
-//                .faultTolerant()
-//                .retryLimit(1)  // retry 시도 횟수
-//                .retry(SQLException.class)  // SQLException 발생시 retry
-//                .noRetry(NullPointerException.class)  // NullPointerException은 retry하지 않음
-//                //.retryPolicy(new CustomRetryPolicy())  // 커스텀 retry 정책 설정
-//                .build();
-//    }
+////    @Bean
+////    @JobScope
+////    public Step step() throws Exception {
+////        return new StepBuilder("step", jobRepository)
+////                .<Member, Member>chunk(10, transactionManager)
+////                .reader(reader(null))
+////                .processor(processor(null))
+////                .writer(writer(null))
+////                .faultTolerant()
+////                .retryLimit(1)  // retry 시도 횟수
+////                .retry(SQLException.class)  // SQLException 발생시 retry
+////                .noRetry(NullPointerException.class)  // NullPointerException은 retry하지 않음
+////                //.retryPolicy(new CustomRetryPolicy())  // 커스텀 retry 정책 설정
+////                .build();
+////    }
 //
 //    // Rollback 설정
 //    // 특정 예외 발생 시 트랜잭션을 롤백하지 않음
-//    @Bean
-//    @JobScope
-//    public Step step() throws Exception {
-//        return new StepBuilder("step", jobRepository)
-//                .<Member, Member>chunk(10, transactionManager)
-//                .reader(reader(null))
-//                .processor(processor(null))
-//                .writer(writer(null))
-//                .faultTolerant()
-//                .noRollback(NullPointerException.class)  // NullPointerException 발생시 롤백하지 않음
-//                .build();
-//    }
+////    @Bean
+////    @JobScope
+////    public Step step() throws Exception {
+////        return new StepBuilder("step", jobRepository)
+////                .<Member, Member>chunk(10, transactionManager)
+////                .reader(reader(null))
+////                .processor(processor(null))
+////                .writer(writer(null))
+////                .faultTolerant()
+////                .noRollback(NullPointerException.class)  // NullPointerException 발생시 롤백하지 않음
+////                .build();
+////    }
 //}
